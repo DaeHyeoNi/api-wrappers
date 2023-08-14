@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "api-wrappers"
+version = "0.1.0"
+description = "api wrappers with fastapi"
+authors = ["daehyeoni <daehyeoni3333@gmail.com>"]
+readme = "README.md"
+packages = [{include = "api_wrappers"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+fastapi = {extras = ["standard"], version = "^0.101.0"}
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
