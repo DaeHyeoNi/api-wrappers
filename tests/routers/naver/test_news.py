@@ -34,7 +34,9 @@ def test_fetch_news_failure(mock_env_variables, mock_requests_get):
     mock_response = Mock()
     mock_response.status_code = 400
     mock_requests_get.return_value = mock_response
-    mock_response.raise_for_status.side_effect = requests.exceptions.HTTPError("Bad Request")
+    mock_response.raise_for_status.side_effect = requests.exceptions.HTTPError(
+        "Bad Request"
+    )
 
     naver_news = NaverNews()
     with pytest.raises(HTTPException) as context:
