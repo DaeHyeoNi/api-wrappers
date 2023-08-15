@@ -1,7 +1,8 @@
+from unittest.mock import Mock, patch
+
 import pytest
-from unittest.mock import patch, Mock
-from fastapi import HTTPException
 import requests
+from fastapi import HTTPException
 
 from wrappers.naver.news.naver_news import NaverNews
 
