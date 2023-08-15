@@ -10,6 +10,7 @@ packages = [{include = "api_wrappers"}]
 python = "^3.8"
 uvicorn = {extras = ["standard"], version = "^0.23.2"}
 fastapi = {extras = ["standard"], version = "^0.101.0"}
+requests = "^2.31.0"
 
 
 [tool.poetry.group.dev.dependencies]
