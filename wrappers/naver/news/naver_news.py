@@ -29,9 +29,7 @@ class NaverNews:
 
         res = requests.get(
             NaverNews.endpoint,
-            params={
-                "query": keyword,
-            },
+            params={"query": keyword,},
             headers={
                 "X-Naver-Client-Id": self._api_key,
                 "X-Naver-Client-Secret": self._api_secret,
