@@ -9,7 +9,7 @@ packages = [{include = "api_wrappers"}]
 [tool.poetry.dependencies]
 python = "^3.8"
 uvicorn = {extras = ["standard"], version = "^0.23.2"}
-fastapi = {extras = ["standard"], version = "^0.101.0"}
+fastapi = {extras = ["standard"], version = "^0.101.1"}
 requests = "^2.31.0"
 
 
