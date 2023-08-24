@@ -1,8 +1,16 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter
 
 router = APIRouter()
 
 
-@router.get("/")
-async def index(request: Request):
+@router.get(
+    "/",
+    responses={
+        200: {
+            "description": "Success",
+            "content": {"application/json": {"example": {"message": "Hello World!"}}},
+        }
+    },
+)
+async def index():
     return {"message": "Hello World!"}
