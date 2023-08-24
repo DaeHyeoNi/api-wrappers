@@ -27,9 +27,7 @@ class NaverNewsAPIKeyNotSetError(BaseModel):
             "model": NaverNewsAPIKeyNotSetError,
             "description": "If NAVER_API_KEY and NAVER_API_SECRET not set in environment",
         },
-        500: {
-            "description": "If requests raise exception",
-        },
+        500: {"description": "If requests raise exception",},
     },
 )
 async def news(request: NaverNewsInput = Depends()):
