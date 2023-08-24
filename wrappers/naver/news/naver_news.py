@@ -15,7 +15,7 @@ class NaverNews:
         self._api_key = os.environ.get("NAVER_API_KEY")
         self._api_secret = os.environ.get("NAVER_API_SECRET")
 
-    def _validation_api_key(self):
+    def _validate_api_key(self):
         if self._api_key is None and self._api_secret is None:
             raise NaverNewsAPIKeyNotSetException(
                 "NAVER_API_KEY and NAVER_API_SECRET must be set in environment"
@@ -23,9 +23,9 @@ class NaverNews:
 
     def fetch(self, keyword: str):
         try:
-            self._validation_api_key()
+            self._validate_api_key()
         except NaverNewsAPIKeyNotSetException as e:
-            raise HTTPException(status_code=500, detail=str(e))
+            raise HTTPException(status_code=401, detail=str(e))
 
         res = requests.get(
             NaverNews.endpoint,
@@ -37,7 +37,7 @@ class NaverNews:
         )
         try:
             res.raise_for_status()
-        except Exception as e:
+        except requests.exceptions.RequestException as e:
             raise HTTPException(status_code=500, detail=str(e))
 
         return res.json()
