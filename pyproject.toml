@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "api wrappers with fastapi"
 authors = ["daehyeoni <daehyeoni3333@gmail.com>"]
 readme = "README.md"
-packages = [{include = "api_wrappers"}]
+packages = [
+  { include = "*.py" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -12,6 +14,8 @@ uvicorn = {extras = ["standard"], version = "^0.23.2"}
 fastapi = {extras = ["standard"], version = "^0.103.1"}
 requests = "^2.31.0"
 
+[tool.poetry.scripts]
+start = "main:start"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
